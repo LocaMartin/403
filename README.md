@@ -1,7 +1,7 @@
 <!--README.md-->
 
 <div align="center">
-<img style="height: 50" src="logo.svg">
+<img style="height: 50px,width: 50px" src="logo.svg">
 <p>v1.0.0</p>
 </div>
 
