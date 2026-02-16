@@ -1,11 +1,9 @@
 <!--README.md-->
 
 <div align="center">
-<h1 style="color: red;">403</h1>
+<img style="height: 50" src="logo.svg">
 <p>v1.0.0</p>
 </div>
-
-> [!CAUTION] Use it only for ethical purpose
 
 A powerful Python-based tool to automate 403 Forbidden bypass techniques for bug bounty hunters, penetration testers, and security researchers. `v1.0.0` perform **`229`** tests.
 
