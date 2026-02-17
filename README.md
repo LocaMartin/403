@@ -5,7 +5,7 @@
   <p>v1.0.0</p>
 </div>
 
-#### A tool to automate 403 Forbidden bypass techniques for bug bounty hunters, penetration testers, and security researchers. `v1.0.0` performs **`229`** tests.
+#### A tool to automate 403 Forbidden bypass techniques for bug bounty hunters, penetration testers, and security researchers.
 
 <hr>
 
@@ -16,7 +16,7 @@ npm install 403
 ```
 **Usage:**
 ```bash
-cat urls.txt | grep -Ei '(\/(admin|administrator|wp-admin|login|backend|console|cpanel|controlpanel|private|secret|secure|confidential|keys|ssh|certs|database|db|config|settings|\.git|\.svn|\.htaccess|\.htpasswd|passwd|shadow|id_rsa|id_dsa|access\.log|error\.log|backup|old|env|backup|bak|save|swp|orig|tmp|temp|copy|bkp|etc\/passwd))([/?]|$)|\.(bak|backup|old|save|swp|orig|tmp|temp|copy|bkp|env|config|cfg|ini|php|json|xml|yml|conf|settings|log|logs|pem|key|cer|crt|pfx|p12|der|jks|keystore|truststore|sql|db|sqlite|sqlite3|mdb|dbf|mdf|ldb|sdf|db3|dmp|gitignore|~)([?/]|$)' | httpx -mc 403 -silent | 403
+cat urls.txt | grep -Ei '(\/(admin|administrator|wp-admin|login|backend|console|cpanel|controlpanel|private|secret|secure|confidential|keys|ssh|certs|database|db|config|settings|\.git|\.svn|\.htaccess|\.htpasswd|passwd|shadow|id_rsa|id_dsa|access\.log|error\.log|backup|old|env|backup|bak|save|swp|orig|tmp|temp|copy|bkp|etc\/passwd))([/?]|$)|\.(bak|backup|~)([?/]|$)' | httpx -mc 403 -silent | 403
 ```
 ```yaml
 403 -t https://example.com/secret
