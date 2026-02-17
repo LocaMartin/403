@@ -1,0 +1,45 @@
+{
+  "name": "403",
+  "version": "1.0.0",
+  "description": "Automated 403 bypass testing tool",
+  "main": "res/index.js",
+  "bin": {
+    "403": "./res/index.js"
+  },
+  "files": [
+    "res/index.js",
+    "README.md",
+    "logo.svg"
+  ],
+  "type": "module",
+  "scripts": {
+    "start": "node res/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LocaMartin/403.git"
+  },
+  "keywords": [
+    "security",
+    "bugbounty",
+    "403",
+    "forbidden",
+    "pentesting",
+    "bypass"
+  ],
+  "author": "LocaMartin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LocaMartin/403/issues"
+  },
+  "homepage": "https://github.com/LocaMartin/403#readme",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "https-proxy-agent": "^7.0.0",
+    "socks-proxy-agent": "^8.0.0",
+    "yaml": "^2.3.0",
+    "yargs": "^17.7.0"    
+  }
+}

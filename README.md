@@ -5,15 +5,14 @@
   <p>v1.0.0</p>
 </div>
 
-A powerful Python-based tool to automate 403 Forbidden bypass techniques for bug bounty hunters, penetration testers, and security researchers. `v1.0.0` perform **`229`** tests.
+#### A tool to automate 403 Forbidden bypass techniques for bug bounty hunters, penetration testers, and security researchers. `v1.0.0` performs **`229`** tests.
 
-[![Prerequisites](https://img.shields.io/badge/Prerequisites-Python%203-blue)](https://www.python.org/downloads/)
 <hr>
 
 **Installation:**
 
 ```yaml
-pip install 403
+npm install 403
 ```
 **Usage:**
 ```bash
