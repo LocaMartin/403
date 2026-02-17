@@ -5,7 +5,7 @@
   <p>v1.0.0</p>
 </div>
 
-#### A tool to automate 403 Forbidden bypass techniques for bug bounty hunters, penetration testers, and security researchers.
+#### Automated tool to test 403 bypass techniques for web app security professionals.
 
 <hr>
 
