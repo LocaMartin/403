@@ -1,31 +1,25 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const https = require('https');
-const http = require('http');
-const { URL } = require('url');
-const readline = require('readline');
-const { spawn } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { URL } from 'url';
+import readline from 'readline';
+import { spawn } from 'child_process';
+import axios from 'axios';
+import chalk from 'chalk';
+import yargs from 'yargs/yargs';
+import { parse as parseYaml } from 'yaml';
+import { HttpsProxyAgent } from 'https-proxy-agent';
+import { SocksProxyAgent } from 'socks-proxy-agent';
 
-// Try to load optional dependencies; if missing, show install message
-let axios, chalk, yargs, yaml, HttpsProxyAgent, SocksProxyAgent;
-try {
-  axios = require('axios');
-  chalk = require('chalk');
-  yargs = require('yargs/yargs');
-  yaml = require('yaml');
-  HttpsProxyAgent = require('https-proxy-agent');
-  SocksProxyAgent = require('socks-proxy-agent');
-} catch (e) {
-  console.error('Missing dependencies. Run: npm install axios chalk yargs yaml https-proxy-agent socks-proxy-agent');
-  process.exit(1);
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // ----------------------------------------------------------------------------
 // Load configuration from res/config.yaml (required)
 // ----------------------------------------------------------------------------
-const CONFIG_PATH = path.join(__dirname, 'res', 'config.yaml');
+const CONFIG_PATH = path.join(__dirname, 'config.yaml');
 if (!fs.existsSync(CONFIG_PATH)) {
   console.error(chalk.red(`[!] Configuration file not found: ${CONFIG_PATH}`));
   console.error(chalk.red('Please ensure res/config.yaml exists.'));
@@ -35,7 +29,7 @@ if (!fs.existsSync(CONFIG_PATH)) {
 let config;
 try {
   const file = fs.readFileSync(CONFIG_PATH, 'utf8');
-  config = yaml.parse(file);
+  config = parseYaml(file);
 } catch (err) {
   console.error(chalk.red(`[!] Failed to parse ${CONFIG_PATH}: ${err.message}`));
   process.exit(1);
@@ -132,12 +126,12 @@ Options:
 if (argv.up) {
   console.log(chalk.cyan('Updating 403...'));
   const npm = spawn('npm', ['install', '-g', '403'], { stdio: 'inherit' });
-  npm.on('close', (code) => {
-    if (code === 0) console.log(chalk.green('Update complete.'));
-    else console.log(chalk.red('Update failed.'));
-    process.exit(code);
+  const code = await new Promise(resolve => {
+    npm.on('close', resolve);
   });
-  return;
+  if (code === 0) console.log(chalk.green('Update complete.'));
+  else console.log(chalk.red('Update failed.'));
+  process.exit(code);
 }
 
 // ----------------------------------------------------------------------------

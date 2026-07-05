@@ -11,9 +11,29 @@
 
 **Installation:**
 
-```yaml
-npm install 403
+From npm:
+
+```bash
+npm install -g 403
 ```
+
+From the cloned repo:
+
+```bash
+git clone https://github.com/LocaMartin/403.git
+cd 403
+npm install
+npm install -g .
+```
+
+After installing, make sure your npm global bin directory is in `PATH`.
+If you use a custom npm prefix, add its `bin` directory, for example:
+
+```bash
+npm config set prefix "$HOME/.npm-global"
+export PATH="$HOME/.npm-global/bin:$PATH"
+```
+
 **Usage:**
 ```bash
 cat urls.txt | grep -Ei '(\/(admin|administrator|wp-admin|login|backend|console|cpanel|controlpanel|private|secret|secure|confidential|keys|ssh|certs|database|db|config|settings|\.git|\.svn|\.htaccess|\.htpasswd|passwd|shadow|id_rsa|id_dsa|access\.log|error\.log|backup|old|env|backup|bak|save|swp|orig|tmp|temp|copy|bkp|etc\/passwd))([/?]|$)|\.(bak|backup|~)([?/]|$)' | httpx -mc 403 -silent | 403
