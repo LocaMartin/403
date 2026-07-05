@@ -11,10 +11,10 @@
 
 **Installation:**
 
-From npm:
+From github:
 
 ```bash
-npm install -g 403
+npm install -g github:LocaMartin/403
 ```
 
 From the cloned repo:
