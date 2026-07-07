@@ -1,22 +1,35 @@
 <!--README.md-->
 
+<div align="right">
+  <img src="https://img.shields.io/badge/node-v22.22.2-blue?style=flat&logo=node.js">
+</div>
+
 <div align="center">
   <img style="height: 100px; width: 100px;" src="logo.svg">
   <p>v1.0.0</p>
 </div>
 
-#### Automated tool to test 403 bypass techniques for web app security professionals.
+#### Fast CLI for probing forbidden endpoints with path, header, IP spoofing, method, encoding, and proxy-based 403 bypass checks.
 
 <hr>
 
-**Installation:**
+<h3 align="center"><b>Installation</b></h3>
 
-From github:
+**From GitHub:**
 
 ```bash
 npm install -g github:LocaMartin/403
 ```
-**Usage:**
+
+**To install a specific version:**
+
+```bash
+npm install -g github:LocaMartin/403#v1.0.0
+```
+
+---
+
+<h3 align="center"><b>Usage</b></h3>
 
 ```bash
 cat urls.txt | grep -Ei '(\/(admin|administrator|wp-admin|login|backend|console|cpanel|controlpanel|private|secret|secure|confidential|keys|ssh|certs|database|db|config|settings|\.git|\.svn|\.htaccess|\.htpasswd|passwd|shadow|id_rsa|id_dsa|access\.log|error\.log|backup|old|env|backup|bak|save|swp|orig|tmp|temp|copy|bkp|etc\/passwd))([/?]|$)|\.(bak|backup|~)([?/]|$)' | httpx -mc 403 -silent | 403
@@ -34,6 +47,9 @@ cat urls.txt | grep -Ei '(\/(admin|administrator|wp-admin|login|backend|console|
   -p "/%2e/" "/..;/admin" \
   --port 8080
 ```
+
+---
+
 <p align="center"><b>Advance Options</b></p>
 
 <div align="center">
@@ -85,6 +101,8 @@ cat urls.txt | grep -Ei '(\/(admin|administrator|wp-admin|login|backend|console|
 </table>
 </div>
 
+---
+
 **Features:**
 - Tecniqes:
   - Path manipulation attacks (`%2e`, `%00`, duplicate slashes, etc.)
@@ -110,9 +128,11 @@ cat urls.txt | grep -Ei '(\/(admin|administrator|wp-admin|login|backend|console|
 - Standard input support
 - Proxy support (`127.0.0.1:9050`)
 
+---
+
 <h2 align="center">DEV DOC</h2>
 
-You can add more payloads without changing code `/res`
+**You can add more payloads without changing code `/res`**
 
 ```yaml
 ├── res

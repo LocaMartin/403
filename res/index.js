@@ -125,7 +125,7 @@ Options:
 
 if (argv.up) {
   console.log(chalk.cyan('Updating 403...'));
-  const npm = spawn('npm', ['install', '-g', '403'], { stdio: 'inherit' });
+  const npm = spawn('npm', ['install', '-g', 'github:LocaMartin/403'], { stdio: 'inherit' });
   const code = await new Promise(resolve => {
     npm.on('close', resolve);
   });

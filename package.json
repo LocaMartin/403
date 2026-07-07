@@ -1,7 +1,7 @@
 {
   "name": "403",
   "version": "1.0.0",
-  "description": "Automated 403 bypass testing tool",
+  "description": "CLI for probing forbidden endpoints with common 403 bypass checks",
   "main": "res/index.js",
   "bin": {
     "403": "./res/index.js"
@@ -40,6 +40,6 @@
     "https-proxy-agent": "^7.0.0",
     "socks-proxy-agent": "^8.0.0",
     "yaml": "^2.3.0",
-    "yargs": "^17.7.0"    
+    "yargs": "^17.7.0"
   }
 }
