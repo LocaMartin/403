@@ -6,7 +6,7 @@
 
 <div align="center">
   <img style="height: 100px; width: 100px;" src="logo.svg">
-  <p>v1.0.0</p>
+  <p>v1.1.0</p>
 </div>
 
 #### Fast CLI for probing forbidden endpoints with path, header, IP spoofing, method, encoding, and proxy-based 403 bypass checks.
@@ -24,7 +24,7 @@ npm install -g github:LocaMartin/403
 **To install a specific version:**
 
 ```bash
-npm install -g github:LocaMartin/403#v1.0.0
+npm install -g github:LocaMartin/403#v1.1.0
 ```
 
 ---
